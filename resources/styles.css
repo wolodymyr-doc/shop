@@ -1,0 +1,284 @@
+/*@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';*/
+
+/*normalize*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}[hidden]{display:none}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:0.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}
+pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}
+figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}
+legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}button,select{text-transform:none}
+button,html input[type="button"],
+input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],
+                                                     input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("./fonts/gibson_regular.woff") format("woff"), url("./fonts/gibson_regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("./fonts/gibson_bold.woff") format("woff"), url("./fonts/gibson_bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("./fonts/gibson_light.woff") format("woff"), url("./fonts/gibson_light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+  url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+  url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/******************************************Global Styles for menu******************************************************/
+.menu-body {
+  position: fixed;
+  margin-top: 50px;
+  width: 222px;
+  height: 123px;
+  right: 0;  top:0;
+}
+
+.menu-item-body:hover,
+.menu-item-body:active,
+.menu-item-body:only-child{
+  background-color: #f8bf4c !important;
+
+}
+
+.menu-body div.mat-menu-content {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 123px;
+}
+
+button.menu-item-body.mat-menu-item {
+  height: 41px;
+  line-height: 41px;
+  font: 300 13px helvetica, arial, verdana, sans-serif;
+  padding: 8px 8px 8px 45px;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.mat-menu-panel.menu-body.mat-menu-before.mat-menu-below {
+  box-shadow: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+}
+/**********************************************************************************************************************/
+
+div.other {
+  margin-left: 352px;
+  background-color: #F7F7F7;
+}
+
+.project-menu {
+  float: left;
+  width: 350px;
+  /*height: 334.5px;*/
+  margin-left: 18px;
+  background-color: #FFFFFF;
+}
+
+.nav {
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 15px;
+  text-align: left;
+  height:75px;
+  background-color: #333e51;
+  padding: 5px;
+}
+
+
+.project-item-edit .mat-button-focus-overlay, .project-add .mat-button-focus-overlay, .project-item-edit .mat-button-focus-overlay, .project-item-delete .mat-button-focus-overlay, .add-hwe .mat-button-focus-overlay {
+  display: none;
+}
+
+.mat-dialog-container {
+  width:500px !important;
+  width: 550px;
+  text-align: center;
+  overflow-y: hidden !important;
+}
+
+md-checkbox.checkbox-violet.mat-accent.mat-checkbox  div.mat-checkbox-frame, md-checkbox.checkbox-violet.mat-accent.mat-checkbox.mat-checkbox-anim-checked-unchecked div.mat-checkbox-frame {
+  color: #C5C8CC;
+  background-color: #FFFFFF;
+}
+
+md-checkbox.checkbox-violet.mat-accent.mat-checkbox.mat-checkbox-anim-unchecked-checked.mat-checkbox-checked div.mat-checkbox-frame {
+  color: #4E5BA0;
+  background-color: #4E5BA0;
+}
+
+div.radio-violet div.mat-radio-outer-circle{
+  border-color: #4E5BA0;
+}
+
+div.radio-violet div.mat-radio-inner-circle {
+  background-color: #4E5BA0;
+}
+
+div.radio-violet input.mat-radio-input.cdk-visually-hidden {
+  display: none;
+}
+
+input.grey-150px {
+  border-color: #C5C8CC;
+  width: 150px;
+}
+
+.add-hwe form.ng-untouched.ng-pristine.ng-valid {
+  margin-left: 20px;
+  padding-top: 5px;
+}
+
+div.search-bc form.form-white-search.ng-untouched.ng-pristine.ng-valid {
+    margin-left: 20px;
+    padding-top: 5px;
+}
+
+.mat-input-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mat-input-underline .mat-input-ripple {
+    background-color: #059fde;
+}
+
+.mat-input-underline .mat-input-ripple.mat-accent {
+    background-color: #ff4081;
+}
+
+.mat-hint {
+    top: 28px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    color: #ff4081;
+    font-size: 10px !important;
+}
+
+.dialog-btn {
+    border-color: #183147 !important;
+    font-weight: bold;
+    min-height: 30px;
+    text-decoration: none;
+    min-width: 120px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    height: 30px;
+    line-height: 0px !important;
+}
+
+.confirm-btn {
+    background-color: #183147 !important;
+    width: 120px;
+}
+
+.confirm-btn .mat-button-wrapper, .cancel-btn .mat-button-wrapper {
+    font-weight: bold;
+    font-size: 14px;
+    color: #f8bf4c;
+    font-family: helvetica, arial, verdana, sans-serif;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    width: 80px;
+    border: 1px !important;
+    border-radius: 3px !important;
+    border-color: #183147 !important;
+    border-style: solid !important;
+}
+
+.button-container .dialog-btn {
+    margin-right: 20px;
+}
+
+.dialog-content {
+    padding: 15px 0 15px 50px;
+    border-top: 1px solid #c2e2ee;
+    border-bottom: 1px solid #c2e2ee;
+}
+
+.dialog-container {
+    padding-left: 100px;
+}
+
+.message-holder, .input-holder .mat-input-element {
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+    display: inline-block;
+    font-family: helvetica, arial, verdana, sans-serif;
+}
+

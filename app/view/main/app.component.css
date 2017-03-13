@@ -1,0 +1,39 @@
+.main-body {
+  position: fixed;
+  top:50px;
+  right:0;
+  left:0;
+  bottom: 0;
+  padding-top: 0;
+  overflow: auto;
+}
+td {
+  vertical-align: top;
+  padding: 0;
+}
+app-add-goods, app-search-bc {
+  display: inline-block;
+}
+.main-panel {
+  background-color: #F7F7F7;
+}
+.central-panel{
+  background-color: #F7F7F7;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.right-panel{
+  background-color: #F7F7F7;
+  height: 100%;
+  margin-top: 0px;
+}
+/*.search-panel {
+  position: absolute;
+  margin-left: 50px;
+  margin-right: 35px;
+}*/
+
+.left-panel {
+  margin-top: 20px;
+}

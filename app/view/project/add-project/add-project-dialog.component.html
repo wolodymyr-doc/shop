@@ -1,0 +1,16 @@
+<div class="dialog-container">
+    <div class="dialog-content">
+        <div class="message-holder">
+            <div class="message">
+                Enter project name
+            </div>
+        </div>
+        <md-input-container class="input-holder">
+            <input mdInput placeholder=" " value="Project Name #" [(ngModel)]="projectName">
+        </md-input-container>
+    </div>
+</div>
+<div md-dialog-actions class="button-container">
+    <button md-button (click)="dialogRef.close(projectName)" class="confirm-btn dialog-btn">Ok</button>
+    <button md-button class="cancel-btn dialog-btn" (click)="dialogRef.close()">Cancel</button>
+</div>

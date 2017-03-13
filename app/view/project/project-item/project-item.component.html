@@ -1,0 +1,15 @@
+<md-list>
+  <md-list-item *ngFor="let project of projects; let i = index" class = "project-item" appProjectItemDragOver draggable="true" (click) = "onChooseProject(project)" [id] = "selectedProjectId == project.id ? 'selected' : ''" >
+    <!-- <div class="showhim"> -->
+      <md-icon md-list-avatar class="icon-folder" svgIcon="folder" ></md-icon>
+      <div class = "project-name" md-line>{{project.name}}</div>
+      <div class = "edit-delete">
+        <ul class="btns-grey">
+          <li><app-edit-item> [(ngModel)]="project" app-edit-item </app-edit-item></li>
+          <li><app-delete-item> [project]="project"
+                                [projects]="projects"
+                                [index]="i" app-delete-item </app-delete-item></li>
+        </ul>
+      </div>
+  </md-list-item>
+</md-list>

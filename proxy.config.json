@@ -1,0 +1,6 @@
+{
+    "/shop/api": {
+        "target": "http://www.brainbasket.com",
+        "secure": false
+    }
+}

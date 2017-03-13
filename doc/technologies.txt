@@ -1,0 +1,10 @@
+https://material.angular.io/guide/getting-started
+
+http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+
+http://stackoverflow.com/questions/30030031/passing-environment-dependent-variables-in-webpack
+
+https://angular.io/docs/ts/latest/tutorial/toh-pt3.html
+
+
+https://tc39.github.io/ecma262/#sec-date-time-string-format

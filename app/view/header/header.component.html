@@ -1,0 +1,12 @@
+<header class="main-header">
+    <div class="header-right-items">
+        <button class="menu-btn" type="button"  nglButton="neutral" [md-menu-trigger-for]="menu">{{ headMenu.userName }}</button>
+        <md-menu x-position="after" #menu="mdMenu"  class="menu-body">
+            <button md-menu-item class="menu-item-body" onclick='window.location = "/help"'> Help</button>
+            <button md-menu-item class="menu-item-body" onclick='window.location = "/#/welcome"'> Go To Main Page <i class="fa fa-sign-out"></i></button>
+            <button md-menu-item class="menu-item-body" onclick='window.location = "/#/logout"'> Log Out <i class="fa fa-chevron-right"></i> </button>
+        </md-menu>
+        <div class="header-item-mail"></div>
+        <div class="header-item-book"></div>
+    </div>
+</header>

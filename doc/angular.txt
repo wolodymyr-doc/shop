@@ -1,0 +1,5 @@
+npm install -g angular-cli
+npm start
+
+
+ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153

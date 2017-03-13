@@ -1,0 +1,10 @@
+.project-item-edit .btn-pencil {
+  min-width: 50px;
+  padding: 0 0px;
+  background-color: inherit;
+}
+
+.project-item-edit .icon-pencil {
+  padding-top: 10px;
+  padding-left: 10px;
+}

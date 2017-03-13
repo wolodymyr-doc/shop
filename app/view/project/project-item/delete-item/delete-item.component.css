@@ -1,0 +1,22 @@
+.project-item-delete {
+    cursor: pointer;
+}
+
+div.project-item-delete {
+    display: inline;
+}
+
+div md-icon.project-item-delete mat-icon mat-list-avatar {
+    height: 30px;
+    color: #8E969D;
+}
+.project-item-delete .btn-basket {
+    min-width: 50px;
+    padding: 0 0px;
+    background-color: inherit;
+}
+
+.btn-ok-left-side {
+    margin-right: 40px;
+    margin-left: 115px;
+}

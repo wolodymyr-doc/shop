@@ -1,0 +1,47 @@
+.goods-readonly {
+    /*margin-top: 10px;*/
+}
+
+.goods-readonly, .bc-card__readonly a {
+    color: #C3C3C3;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.goods-status {
+    width: 70px;
+    padding: 7px 12px !important;
+    text-align: center;
+}
+
+.progress {
+    background-color: #FFEB99;
+}
+
+.initial {
+    background-color: #C3C3C3;
+}
+
+.submitted {
+    background-color: #D2F2D9;
+}
+
+.goods-description {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 18px;
+}
+
+.goods-domain {
+    background-color: transparent;
+    font-weight: 700;
+    text-align: center;
+}
+
+.goods-date{
+    background-color: transparent;
+}
+
+
+
+

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>HiTechShop</artifactId>
+    <packaging>war</packaging>
+
+    <name>HiTechShop</name>
+
+    <profiles>
+        <profile>
+            <id>production</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <finalName>hitechshop</finalName>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>${maven-war-plugin.version}</version>
+                        <configuration>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                            <warSourceExcludes>app/**/*.ts,node_modules/**</warSourceExcludes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <target>
+                                        <taskdef resource="net/sf/antcontrib/antlib.xml"
+                                                 classpathref="maven.dependency.classpath"/>
+                                        <if>
+                                            <not>
+                                                <available file="${project.basedir}/node_modules/sshpk/package.json"/>
+                                            </not>
+                                            <then>
+                                                <echo message="Copying node_module_source to node_module..."/>
+                                                <copy todir="${project.basedir}/node_modules">
+                                                    <fileset dir="${project.basedir}/node_modules_source"/>
+                                                </copy>
+                                            </then>
+                                        </if>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>1.3</version>
+                        <configuration>
+                            <workingDirectory>${basedir}</workingDirectory>
+                            <npmRegistryURL></npmRegistryURL>
+                            <installDirectory>node_modules</installDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <nodeDownloadRoot>
+                                        https://sponsorschoose.org
+                                    </nodeDownloadRoot>
+                                    <npmDownloadRoot>
+                                        https://sponsorschoose.org
+                                    </npmDownloadRoot>
+                                    <nodeVersion>v6.9.2</nodeVersion>
+                                    <npmVersion>3.10.8</npmVersion>
+
+                                    <installDirectory>node_modules</installDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>install</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm run build</id>
+                                <goals>
+                                    <goal>webpack</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>development</id>
+            <build>
+                <finalName>hitechshop</finalName>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>${maven-war-plugin.version}</version>
+                        <configuration>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                            <warSourceExcludes>app/**/*.ts,node_modules/**</warSourceExcludes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <target>
+                                        <taskdef resource="net/sf/antcontrib/antlib.xml"
+                                                 classpathref="maven.dependency.classpath"/>
+                                        <if>
+                                            <not>
+                                                <available file="${project.basedir}/node_modules/sshpk/package.json"/>
+                                            </not>
+                                            <then>
+                                                <echo message="Copying node_module_source to node_module..."/>
+                                                <copy todir="${project.basedir}/node_modules">
+                                                    <fileset dir="${project.basedir}/node_modules_source"/>
+                                                </copy>
+                                            </then>
+                                        </if>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>1.3</version>
+                        <configuration>
+                            <workingDirectory>${basedir}</workingDirectory>
+                            <npmRegistryURL></npmRegistryURL>
+                            <installDirectory>node_modules</installDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <nodeDownloadRoot>
+                                        https://sponsorschoose.org
+                                    </nodeDownloadRoot>
+                                    <npmDownloadRoot>
+                                        https://sponsorschoose.org
+                                    </npmDownloadRoot>
+                                    <nodeVersion>v6.9.2</nodeVersion>
+                                    <npmVersion>3.10.8</npmVersion>
+                                    <installDirectory>node_modules</installDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>install</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm run build</id>
+                                <goals>
+                                    <goal>webpack</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <dependencies>
+        <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ant</groupId>
+                    <artifactId>ant</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.8</version>
+        </dependency>
+    </dependencies>
+</project>
