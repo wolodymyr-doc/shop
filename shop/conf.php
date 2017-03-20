@@ -10,4 +10,11 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit;
   }
+define('config_isLogged',true);
+function shop_userHasRole($role) {
+    if ($role=='admin' || $role=='sale' || $role=='manager' || $role=='buyer') {
+        return true;
+    }
+    return false;
+}
 ?>

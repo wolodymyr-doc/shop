@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine on
+
+Options +FollowSymlinks
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME}/index.php !-f
+
+RewriteRule ^shop/api/(.*)$   /shop/shopapi.php [L,QSA] 
