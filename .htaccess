@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine on
+
+Options +FollowSymlinks
+
+RewriteBase /
+
+RewriteRule ^shopapi/(.*)$  /shop/shopapi.php [L,QSA] 

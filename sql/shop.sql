@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 25 2017 г., 18:42
+-- Время создания: Мар 25 2017 г., 11:36
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `shop12`
+-- База данных: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `categories`
+-- Структура таблицы `shop_categories`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_categories` (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `shop_categories` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `category`
+-- Структура таблицы `shop_category`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_category` (
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `shop_characteristics` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `currency`
+-- Структура таблицы `shop_currency`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_currency` (
@@ -93,13 +93,13 @@ CREATE TABLE IF NOT EXISTS `shop_currency` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `goods`
+-- Структура таблицы `shop_goods`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_goods` (
   `id` bigint(22) NOT NULL,
   `categories` int(11) NOT NULL,
-  `user` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `price` decimal(11,2) DEFAULT NULL,
   `image_small` varchar(200) DEFAULT NULL,
   `image_big` varchar(200) DEFAULT NULL,
@@ -113,13 +113,31 @@ CREATE TABLE IF NOT EXISTS `shop_goods` (
   `description3` text,
   `description4` text,
   `description5` text,
+  `update_user` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `language`
+-- Структура таблицы `shop_group`
+--
+
+CREATE TABLE IF NOT EXISTS `shop_group` (
+  `id` int(11) NOT NULL,
+  `director` int(11) NOT NULL,
+  `name1` varchar(255) NOT NULL,
+  `name2` varchar(255) NOT NULL,
+  `name3` varchar(255) NOT NULL,
+  `name4` varchar(255) NOT NULL,
+  `name5` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `shop_language`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_language` (
@@ -131,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `shop_language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `language`
+-- Дамп данных таблицы `shop_language`
 --
 
 INSERT INTO `shop_language` (`id`, `code`, `name`, `active`) VALUES
@@ -144,11 +162,36 @@ INSERT INTO `shop_language` (`id`, `code`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `order`
+-- Структура таблицы `shop_log`
+--
+
+CREATE TABLE IF NOT EXISTS `shop_log` (
+  `id` bigint(20) NOT NULL,
+  `group` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `ctime` datetime NOT NULL,
+  `table` varchar(20) NOT NULL,
+  `tableid` bigint(20) NOT NULL,
+  `param1` bigint(20) NOT NULL,
+  `param2` bigint(20) NOT NULL,
+  `param3` int(11) NOT NULL,
+  `param4` int(11) NOT NULL,
+  `param5` int(11) NOT NULL,
+  `param6` int(11) NOT NULL,
+  `param7` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `shop_order`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_order` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(22) NOT NULL,
   `buyer` int(11) NOT NULL,
   `total_discount` int(11) NOT NULL,
   `total_cost` int(11) NOT NULL,
@@ -158,18 +201,19 @@ CREATE TABLE IF NOT EXISTS `shop_order` (
   `delivery_time` datetime NOT NULL,
   `finish_time` datetime NOT NULL,
   `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `seller` int(11) DEFAULT NULL,
+  `group` int(11) DEFAULT NULL,
+  `comment` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `orderitem`
+-- Структура таблицы `shop_orderitem`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_orderitem` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(22) NOT NULL,
   `order` bigint(22) NOT NULL,
   `goods` int(11) NOT NULL,
   `price` decimal(11,2) NOT NULL,
@@ -185,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `shop_orderitem` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `person`
+-- Структура таблицы `shop_person`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_person` (
@@ -195,22 +239,23 @@ CREATE TABLE IF NOT EXISTS `shop_person` (
   `regdate` datetime NOT NULL,
   `password` varchar(200) NOT NULL,
   `phone` varchar(255) NOT NULL,
-  `role` int(11) NOT NULL DEFAULT '1',
+  `login` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `person`
+-- Дамп данных таблицы `shop_person`
 --
 
-INSERT INTO `shop_person` (`id`, `name`, `address`, `regdate`, `password`, `phone`, `role`) VALUES
-(1, 'Iryna', NULL, '0000-00-00 00:00:00', '45', '', 1),
-(2, 'Dmytro', 'Wernadskogo 17', '0000-00-00 00:00:00', 'eva', '', 1);
+INSERT INTO `shop_person` (`id`, `name`, `address`, `regdate`, `password`, `phone`, `login`, `email`) VALUES
+(1, 'Iryna', NULL, '0000-00-00 00:00:00', '45', '', '', ''),
+(2, 'Dmytro', 'Wernadskogo 17', '0000-00-00 00:00:00', 'eva', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `role`
+-- Структура таблицы `shop_role`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_role` (
@@ -220,15 +265,15 @@ CREATE TABLE IF NOT EXISTS `shop_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `role`
+-- Дамп данных таблицы `shop_role`
 --
 
 INSERT INTO `shop_role` (`id`, `name`) VALUES
-(1, 'user'),
-(2, 'sales'),
+(1, 'buyer'),
+(2, 'sale'),
 (3, 'manager'),
-(4, 'admin'),
-(5, 'superadmin');
+(4, 'director'),
+(5, 'admin');
 
 -- --------------------------------------------------------
 
@@ -241,12 +286,13 @@ CREATE TABLE IF NOT EXISTS `shop_storage` (
   `warehouse` int(11) NOT NULL,
   `goods` bigint(22) NOT NULL,
   `discount` decimal(11,2) NOT NULL,
-  `user` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `policy` text NOT NULL,
   `amount` decimal(11,3) NOT NULL,
   `startDate` datetime DEFAULT NULL,
   `endDate` datetime DEFAULT NULL,
-  `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_user` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `startDate` (`startDate`),
   KEY `endDate` (`endDate`)
@@ -255,11 +301,28 @@ CREATE TABLE IF NOT EXISTS `shop_storage` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `warehouse`
+-- Структура таблицы `shop_user`
+--
+
+CREATE TABLE IF NOT EXISTS `shop_user` (
+  `id` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  `creator_user` int(11) NOT NULL,
+  `startDate` int(11) NOT NULL,
+  `endDate` int(11) NOT NULL,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `shop_warehouse`
 --
 
 CREATE TABLE IF NOT EXISTS `shop_warehouse` (
   `id` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `location` varchar(50) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `phone` varchar(200) DEFAULT NULL,

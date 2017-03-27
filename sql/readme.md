@@ -1,4 +1,4 @@
 create database shop;
-CREATE USER 'ushop'@'localhost' IDENTIFIED BY 'pshop';
-GRANT ALL PRIVILEGES ON * . * TO 'ushop'@'localhost';
+CREATE USER 'ushop' IDENTIFIED BY 'pshop';
+GRANT ALL PRIVILEGES ON *.* TO 'ushop';
 ++++ IMPORT shop.sql ++++++++++++++++++++++++++++++++++

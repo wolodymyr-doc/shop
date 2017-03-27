@@ -54,7 +54,7 @@ class ShopApi {
            } else {
                $this->postProcess($res);
            }
-           return $res->data;
+           return $res['data'];
        }
        function executeSql($sql,$fetch) {
             $res = array();
@@ -65,8 +65,8 @@ class ShopApi {
             }
             else {
                 if ($fetch) {
-                    if ($fetch=='id')
-                            $res->id = mysqli_insert_id($this->con);
+                    if ($fetch==='id')
+                            $res['id'] = mysqli_insert_id($this->con);
                        else {
                            while($r=mysqli_fetch_assoc($q)) {
                                 $res[]= $r;
@@ -77,31 +77,34 @@ class ShopApi {
             }
             return $res;
        }
-       function postProcess($res) {
-            if ($res=>sql_read) {
-                $data = $res=>sql_read;
+       function postProcess(&$res) {
+            if ($res['sql_read']) {
+                $data = $res['sql_read'];
                 if (!is_array($data)) {
-                    $res=>data = $this->executeSql($data,true);
+                    $res['data'] = $this->executeSql($data,true);
                 } else {
-                        if (!$res=>data) $res=>data=array();
+                        if (!$res['data']) $res['data']=array();
                         foreach($data as $sql) {
-                            $res=>data[] = $this->executeSql($sql,true);
+                            $res['data'][] = $this->executeSql($sql,true);
                         }
                 }
             }
-            if ($res=>sql_create) {
+            if ($res['sql_create']) {
             }
        }
 }
 header('Content-Type: application/json; charset=utf-8');
 try {
-    $request = explode("/", strtolower(substr(@$_SERVER['PATH_INFO'], 1)));
-    if (sizeof($request)<2) throw new Exception('too short api url');
+    $path = $_SERVER['REQUEST_URI'];
+    if (!$path) $path = $_SERVER['PATH_INFO'];
+    $request = explode("/", strtolower(substr($path, 1)));
+    if (sizeof($request)<3) throw new Exception('too short api url');
+    array_shift($request);
     $role = array_shift($request);
     $name = array_shift($request);
     if (!ctype_alpha($role) || !ctype_alpha($name)) throw new Exception('wrong url');
     if (!shop_userHasRole($role)) throw new Exception("401"); //unauthorized
-    $file = './'.$role.'/'.$name.'.php';
+    $file = './api/'.$role.'/'.$name.'.php';
     require_once($file);
     $class = ucfirst($name);
     $obj = new $class();
@@ -113,7 +116,8 @@ try {
     if (is_array($res)) $res = json_encode($res);
     echo $res;
 
-} catch (Exception $e) {
+} 
+catch (Exception $e) {
     $err = $e->getMessage();
     $code = substr($message,0,3);
     $message = '';
@@ -122,7 +126,11 @@ try {
     } else {
         $code = 503;
     }
-    http_response_code($code);
+    if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
+         http_response_code($code);
+    } else {
+      header('HTTP/1.1 '.$code.' Unauthorized', true, $code);
+    }
     $res = array("message"=>$message);
     if (defined('config_isLogged')) $res['log'] = $err;
     echo json_encode($res);

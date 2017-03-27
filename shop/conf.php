@@ -11,6 +11,7 @@ if (mysqli_connect_errno())
   exit;
   }
 define('config_isLogged',true);
+mysqli_set_charset($con, 'utf8');
 function shop_userHasRole($role) {
     if ($role=='admin' || $role=='sale' || $role=='manager' || $role=='buyer') {
         return true;

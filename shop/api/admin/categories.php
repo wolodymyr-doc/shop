@@ -2,7 +2,7 @@
 class Category extends ShopApi {
 
    function _get($params) {
-       return array('sql_read'=>'select * from shop_category');
+       return array('sql_read'=>'select * from shop_categories');
    }
    function _post($params,$data) {
        return array('sql_create'=>'insert into category');
