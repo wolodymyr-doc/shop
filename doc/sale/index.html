@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<script src="jscookmenu.min.js"></script>
+<link href="Untitled2.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<input type="submit" id="Button1" onclick="window.location.href='index.html';return false;" name="" value="Products" style="position:absolute;left:415px;top:192px;width:96px;height:25px;z-index:1;">
+<input type="submit" id="Button2" onclick="window.location.href='index3.html';return false;" name="" value="Orders" style="position:absolute;left:586px;top:192px;width:130px;height:25px;z-index:2;">
+<table style="position:absolute;left:259px;top:239px;width:323px;height:62px;z-index:3;" id="Table1">
+<tr>
+<td class="cell0">&nbsp;</td>
+<td class="cell0">&nbsp;</td>
+<td class="cell1">&nbsp;</td>
+</tr>
+</table>
+<table style="position:absolute;left:595px;top:239px;width:299px;height:63px;z-index:4;" id="Table2">
+<tr>
+<td class="cell0">&nbsp;</td>
+<td class="cell0">&nbsp;</td>
+<td class="cell1">&nbsp;</td>
+</tr>
+</table>
+<table style="position:absolute;left:361px;top:309px;width:536px;height:65px;z-index:5;" id="Table3">
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> <br>Search by</span></td>
+</tr>
+</table>
+<input type="submit" id="Button9" name="" value=" Add Category" style="position:absolute;left:267px;top:239px;width:94px;height:62px;z-index:6;">
+<input type="submit" id="Button10" name="" value=" Edit Category" style="position:absolute;left:378px;top:239px;width:85px;height:62px;z-index:7;">
+<input type="submit" id="Button11" name="" value=" Delete Category" style="position:absolute;left:479px;top:239px;width:95px;height:62px;z-index:8;">
+<input type="submit" id="Button12" name="" value=" Add product" style="position:absolute;left:604px;top:239px;width:88px;height:62px;z-index:9;">
+<input type="submit" id="Button13" onclick="window.location.href='index2.html';return false;" name="" value=" Edit product" style="position:absolute;left:700px;top:239px;width:86px;height:62px;z-index:10;">
+<input type="submit" id="Button14" name="" value=" Delete product" style="position:absolute;left:803px;top:239px;width:77px;height:62px;z-index:11;">
+<input type="submit" id="Button15" name="" value="Ok" style="position:absolute;left:838px;top:317px;width:42px;height:49px;z-index:12;">
+<table style="position:absolute;left:479px;top:320px;width:333px;height:38px;z-index:13;" id="Table5">
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Enter product:</span></td>
+</tr>
+</table>
+<input type="text" id="Editbox1" style="position:absolute;left:463px;top:132px;width:173px;height:32px;line-height:32px;z-index:14;" name="Editbox1" value="User login/Change user">
+<input type="text" id="Editbox2" style="position:absolute;left:655px;top:132px;width:65px;height:32px;line-height:32px;z-index:15;" name="Editbox1" value="Language">
+<input type="text" id="Editbox3" style="position:absolute;left:747px;top:132px;width:140px;height:32px;line-height:32px;z-index:16;" name="Editbox1" value="Manager access right">
+<div id="wb_MenuBar1" style="position:absolute;left:434px;top:321px;width:36px;height:24px;z-index:1017;">
+<div id="MenuBar1">
+<ul style="display:none;">
+<li><span></span><span>___</span>
+<ul>
+<li><span></span><span>name</span></li>
+<li><span></span><span>code</span></li>
+<li><span></span><span>time</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<script>
+var cmMenuBar1 =
+{
+   mainFolderLeft: '',
+   mainFolderRight: '',
+   mainItemLeft: '',
+   mainItemRight: '',
+   folderLeft: '',
+   folderRight: '',
+   itemLeft: '',
+   itemRight: '',
+   mainSpacing: 0,
+   subSpacing: 0,
+   delay: 100,
+   offsetHMainAdjust: [0, 0],
+   offsetSubAdjust: [0, 0]
+};
+var cmMenuBar1HSplit = [_cmNoClick, '<td class="MenuBar1MenuSplitLeft"><div></div></td>' +
+                                       '<td class="MenuBar1MenuSplitText"><div></div></td>' +
+                                       '<td class="MenuBar1MenuSplitRight"><div></div></td>'];
+var cmMenuBar1MainVSplit = [_cmNoClick, '<div><table width="15" cellspacing="0"><tr><td class="MenuBar1HorizontalSplit">|</td></tr></table></div>'];
+var cmMenuBar1MainHSplit = [_cmNoClick, '<td colspan="3" class="MenuBar1MainSplitText"><div></div></td>'];
+cmDrawFromText('MenuBar1', 'hbr', cmMenuBar1, 'MenuBar1');
+</script>
+</div>
+<div id="wb_GoMenu1" style="position:absolute;left:157px;top:308px;width:182px;height:67px;z-index:18;">
+<form id="GoMenu1">
+   <select id="GoMenu1_select" name="GoMenu1">
+      <option class="_self" value="#" selected>Select category</option>
+      <option class="_self" value="">sport</option>
+      <option class="_self" value="">clothes</option>
+      <option class="_self" value="">accessories</option>
+   </select>
+   <input id="GoMenu1_input" type="button" value="Ok" onclick="OnGoMenuFormLink(this.form.GoMenu1)">
+</form>
+</div>
+<table style="position:absolute;left:139px;top:431px;width:774px;height:660px;z-index:19;" id="Table4">
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> </span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Dumbbells 2, weight 1500, quantity 2, metal / rubber material.</span></td>
+</tr>
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> </span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Dumbbells 1, weight 1500, quantity 2, metal / rubber material.</span></td>
+</tr>
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> </span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Dumbbells 1, weight 1500, quantity 2, metal / rubber material.</span></td>
+</tr>
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> </span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Dumbbells 1, weight 1500, quantity 2, metal / rubber material.</span></td>
+</tr>
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> </span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Dumbbells 1, weight 1500, quantity 2, metal / rubber material.</span></td>
+</tr>
+</table>
+<table style="position:absolute;left:138px;top:398px;width:776px;height:34px;z-index:20;" id="Table6">
+<tr>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Photo</span></td>
+<td class="cell1"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Decription</span></td>
+</tr>
+</table>
+<div id="wb_Image1" style="position:absolute;left:157px;top:442px;width:112px;height:112px;z-index:21;">
+<img src="images/1.jpg" id="Image1" alt=""></div>
+<div id="wb_Image2" style="position:absolute;left:169px;top:578px;width:90px;height:90px;z-index:22;">
+<img src="images/2.jpg" id="Image2" alt=""></div>
+<div id="wb_Image3" style="position:absolute;left:168px;top:711px;width:101px;height:101px;z-index:23;">
+<img src="images/3.jpg" id="Image3" alt=""></div>
+<div id="wb_Image4" style="position:absolute;left:157px;top:838px;width:135px;height:90px;z-index:24;">
+<img src="images/4.jpg" id="Image4" alt=""></div>
+<div id="wb_Image5" style="position:absolute;left:161px;top:967px;width:126px;height:94px;z-index:25;">
+<img src="images/5.jpg" id="Image5" alt=""></div>
+<div id="wb_Text1" style="position:absolute;left:172px;top:141px;width:153px;height:25px;z-index:26;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:21px;">Hi-Tech store</span></div>
+</body>
+</html>
