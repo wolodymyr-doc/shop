@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './view/main/app.component';
+import {CategoriesService} from './service/categories.service';
 import {GoodsComponent} from './view/goods/goods.component';
 import {GoodsControlComponent} from './view/goods/goods-control/goods-control.component';
 import {GoodsDescriptionComponent} from './view/goods/goods-description/goods-description.component';
@@ -67,10 +68,11 @@ import 'hammerjs';
         DeleteItemDialogComponent,
         EditProjectDialogComponent
     ],
-    providers: [GoodsService,
+    providers: [GoodsService, //all services must be included here
         ProjectService,
         HeaderService,
-        UserService
+        UserService,
+        CategoriesService
     ]
 })
 export class AppModule {

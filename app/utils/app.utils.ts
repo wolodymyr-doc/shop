@@ -1,4 +1,4 @@
-export const BACKEND_API_URL:string = '/shop/api';
+export const BACKEND_API_URL:string = '/shopapi';
 
 export class UrlRegistry {
 

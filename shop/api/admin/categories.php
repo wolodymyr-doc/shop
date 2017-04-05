@@ -1,11 +1,11 @@
 <?php
-class Category extends ShopApi {
+class Categories extends ShopApi {
 
    function _get($params) {
        return array('sql_read'=>'select * from shop_categories');
    }
    function _post($params,$data) {
-       return array('sql_create'=>'insert into category');
+       return array('sql_create'=>'insert into shop_categories');
    }
    function _put($params,$data) {
        return array('sql_update'=>'update category set ');
