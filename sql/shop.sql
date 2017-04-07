@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 25 2017 г., 11:36
+-- Время создания: Апр 07 2017 г., 23:56
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -26,11 +26,12 @@ SET time_zone = "+00:00";
 -- Структура таблицы `shop_categories`
 --
 
+DROP TABLE IF EXISTS `shop_categories`;
 CREATE TABLE IF NOT EXISTS `shop_categories` (
   `id` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   `parent` int(11) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `image` text,
   `name1` varchar(200) DEFAULT NULL,
   `name2` varchar(200) DEFAULT NULL,
   `name3` varchar(200) DEFAULT NULL,
@@ -39,12 +40,27 @@ CREATE TABLE IF NOT EXISTS `shop_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `shop_categories`
+--
+
+INSERT INTO `shop_categories` (`id`, `level`, `parent`, `image`, `name1`, `name2`, `name3`, `name4`, `name5`) VALUES
+(1, 0, 0, '', 'Books', 'Книги', 'Книги', 'Bücher', 'Livres'),
+(2, 0, 0, '', 'Software', 'Програми', 'Программы', 'Software', 'Logiciel'),
+(3, 0, 0, '', 'Electronics', 'Електроніка', 'Электроника', 'Elektronik', 'Électronique'),
+(4, 0, 0, '', 'Home', 'Дом', 'Дом', 'Haus', 'Maison'),
+(5, 0, 0, '', 'Garden', 'Сад город', 'Сад огород', 'Garten', 'Jardin'),
+(6, 0, 0, '', 'Sport', 'Спорт', 'Спорт', 'Sport', 'Sport'),
+(7, 0, 0, '', 'Art', 'Мистецтво', 'Исскуство', 'Kunst', 'Art'),
+(8, 0, 0, '', 'Auto', 'Автомобілі', 'Автомобили', 'Auto', 'Voitures');
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `shop_category`
 --
 
+DROP TABLE IF EXISTS `shop_category`;
 CREATE TABLE IF NOT EXISTS `shop_category` (
   `id` int(11) NOT NULL,
   `categories` int(11) NOT NULL,
@@ -59,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `shop_category` (
 -- Структура таблицы `shop_characteristics`
 --
 
+DROP TABLE IF EXISTS `shop_characteristics`;
 CREATE TABLE IF NOT EXISTS `shop_characteristics` (
   `id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
@@ -77,11 +94,13 @@ CREATE TABLE IF NOT EXISTS `shop_characteristics` (
 -- Структура таблицы `shop_currency`
 --
 
+DROP TABLE IF EXISTS `shop_currency`;
 CREATE TABLE IF NOT EXISTS `shop_currency` (
   `id` int(11) NOT NULL,
   `rate` decimal(10,5) NOT NULL,
-  `sign` varchar(5) NOT NULL,
+  `sign` varchar(20) NOT NULL,
   `kind` int(11) NOT NULL,
+  `code` varchar(3) NOT NULL,
   `name1` varchar(20) NOT NULL,
   `name2` varchar(20) NOT NULL,
   `name3` varchar(20) NOT NULL,
@@ -96,6 +115,7 @@ CREATE TABLE IF NOT EXISTS `shop_currency` (
 -- Структура таблицы `shop_goods`
 --
 
+DROP TABLE IF EXISTS `shop_goods`;
 CREATE TABLE IF NOT EXISTS `shop_goods` (
   `id` bigint(22) NOT NULL,
   `categories` int(11) NOT NULL,
@@ -124,6 +144,7 @@ CREATE TABLE IF NOT EXISTS `shop_goods` (
 -- Структура таблицы `shop_group`
 --
 
+DROP TABLE IF EXISTS `shop_group`;
 CREATE TABLE IF NOT EXISTS `shop_group` (
   `id` int(11) NOT NULL,
   `director` int(11) NOT NULL,
@@ -131,7 +152,11 @@ CREATE TABLE IF NOT EXISTS `shop_group` (
   `name2` varchar(255) NOT NULL,
   `name3` varchar(255) NOT NULL,
   `name4` varchar(255) NOT NULL,
-  `name5` varchar(255) NOT NULL
+  `name5` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phones` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `accounts` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -140,6 +165,7 @@ CREATE TABLE IF NOT EXISTS `shop_group` (
 -- Структура таблицы `shop_language`
 --
 
+DROP TABLE IF EXISTS `shop_language`;
 CREATE TABLE IF NOT EXISTS `shop_language` (
   `id` int(11) NOT NULL,
   `code` varchar(5) NOT NULL,
@@ -165,6 +191,7 @@ INSERT INTO `shop_language` (`id`, `code`, `name`, `active`) VALUES
 -- Структура таблицы `shop_log`
 --
 
+DROP TABLE IF EXISTS `shop_log`;
 CREATE TABLE IF NOT EXISTS `shop_log` (
   `id` bigint(20) NOT NULL,
   `group` int(11) NOT NULL,
@@ -190,6 +217,7 @@ CREATE TABLE IF NOT EXISTS `shop_log` (
 -- Структура таблицы `shop_order`
 --
 
+DROP TABLE IF EXISTS `shop_order`;
 CREATE TABLE IF NOT EXISTS `shop_order` (
   `id` bigint(22) NOT NULL,
   `buyer` int(11) NOT NULL,
@@ -212,6 +240,7 @@ CREATE TABLE IF NOT EXISTS `shop_order` (
 -- Структура таблицы `shop_orderitem`
 --
 
+DROP TABLE IF EXISTS `shop_orderitem`;
 CREATE TABLE IF NOT EXISTS `shop_orderitem` (
   `id` bigint(22) NOT NULL,
   `order` bigint(22) NOT NULL,
@@ -232,6 +261,7 @@ CREATE TABLE IF NOT EXISTS `shop_orderitem` (
 -- Структура таблицы `shop_person`
 --
 
+DROP TABLE IF EXISTS `shop_person`;
 CREATE TABLE IF NOT EXISTS `shop_person` (
   `id` int(11) NOT NULL,
   `name` varchar(200) DEFAULT NULL,
@@ -258,6 +288,7 @@ INSERT INTO `shop_person` (`id`, `name`, `address`, `regdate`, `password`, `phon
 -- Структура таблицы `shop_role`
 --
 
+DROP TABLE IF EXISTS `shop_role`;
 CREATE TABLE IF NOT EXISTS `shop_role` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
@@ -281,6 +312,7 @@ INSERT INTO `shop_role` (`id`, `name`) VALUES
 -- Структура таблицы `shop_storage`
 --
 
+DROP TABLE IF EXISTS `shop_storage`;
 CREATE TABLE IF NOT EXISTS `shop_storage` (
   `id` bigint(22) NOT NULL,
   `warehouse` int(11) NOT NULL,
@@ -304,8 +336,10 @@ CREATE TABLE IF NOT EXISTS `shop_storage` (
 -- Структура таблицы `shop_user`
 --
 
+DROP TABLE IF EXISTS `shop_user`;
 CREATE TABLE IF NOT EXISTS `shop_user` (
   `id` int(11) NOT NULL,
+  `person` int(11) NOT NULL,
   `group` int(11) NOT NULL,
   `role` int(11) NOT NULL,
   `creator_user` int(11) NOT NULL,
@@ -320,6 +354,7 @@ CREATE TABLE IF NOT EXISTS `shop_user` (
 -- Структура таблицы `shop_warehouse`
 --
 
+DROP TABLE IF EXISTS `shop_warehouse`;
 CREATE TABLE IF NOT EXISTS `shop_warehouse` (
   `id` int(11) NOT NULL,
   `group` int(11) NOT NULL,

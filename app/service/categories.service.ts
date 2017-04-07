@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'RxJS/Rx';
 import {UrlRegistry} from '../utils/app.utils';
+import {Categories} from '../model/categories';
 
 @Injectable()
 export class CategoriesService {
@@ -12,7 +13,8 @@ export class CategoriesService {
     }
 
     getCategories(): Observable<Categories[]> {
-        return this.http.get(this.adminUrl);
+        return this.http.get(this.adminUrl)
+               .map(response => response.json() as Categories[]);
     }
 
 }

@@ -6,6 +6,7 @@ import {MaterialModule, MdListModule, MdMenuItem} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
+import {AppRouterModule} from './app-router.module';
 import {AppComponent} from './view/main/app.component';
 import {CategoriesService} from './service/categories.service';
 import {GoodsComponent} from './view/goods/goods.component';
@@ -25,6 +26,7 @@ import {ProjectComponent} from './view/project/project.component';
 import {ManagerComponent} from './view/manager/manager.component';
 import {AdminComponent} from './view/admin/admin.component';
 import {BuyerComponent} from './view/buyer/buyer.component';
+import {SaleComponent} from './view/sale/sale.component';
 import {ProjectItemDragOverDirective} from './view/project/project-item/project-item-drag-over.directive';
 import {AddGoodsComponent, AddGoodsDialogComponent} from './view/add-goods/add-goods.component';
 import {SearchBcComponent} from './view/search-bc/search-bc.component';
@@ -55,7 +57,8 @@ import 'hammerjs';
         HeaderComponent,
         ManagerComponent,
         BuyerComponent,
-        AdminComponent
+        AdminComponent,
+        SaleComponent
     ],
     imports: [
         BrowserModule,
@@ -64,7 +67,8 @@ import 'hammerjs';
         MaterialModule,
         FlexLayoutModule,
         MdListModule,
-        HelpersModule
+        HelpersModule,
+        AppRouterModule
     ],
     bootstrap: [
         AppComponent

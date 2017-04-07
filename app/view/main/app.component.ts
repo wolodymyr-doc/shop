@@ -10,17 +10,15 @@ import { UserService} from '../../service/user.service';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    selectedProject: Project;
     
 
     constructor(private userService:UserService) {
+/************************
         this.userService.authenticate()
             .then((user) => {
                 console.log('current user', user)
             })
+*********************************/
     }
 
-    onChangeProject(project: Project): void {
-        this.selectedProject = project;
-    }
 }
