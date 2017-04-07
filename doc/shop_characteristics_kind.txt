@@ -1,0 +1,7 @@
+0 - string  <input type="text" />
+1 - int  <input type="number" />
+2 - true/false <input type="checkbox" />
+3 - float
+4 - email <input type="email" />
+5 - money
+6 - list <select></select>
