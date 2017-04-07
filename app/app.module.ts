@@ -24,6 +24,7 @@ import {ProjectService} from './service/project.service';
 import {ProjectComponent} from './view/project/project.component';
 import {ManagerComponent} from './view/manager/manager.component';
 import {AdminComponent} from './view/admin/admin.component';
+import {BuyerComponent} from './view/buyer/buyer.component';
 import {ProjectItemDragOverDirective} from './view/project/project-item/project-item-drag-over.directive';
 import {AddGoodsComponent, AddGoodsDialogComponent} from './view/add-goods/add-goods.component';
 import {SearchBcComponent} from './view/search-bc/search-bc.component';
@@ -53,6 +54,7 @@ import 'hammerjs';
         SearchBcComponent,
         HeaderComponent,
         ManagerComponent,
+        BuyerComponent,
         AdminComponent
     ],
     imports: [
