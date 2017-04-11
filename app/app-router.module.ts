@@ -6,7 +6,11 @@ import { BuyerComponent } from './view/buyer/buyer.component';
 import { ManagerComponent } from './view/manager/manager.component';
 import { SaleComponent } from './view/sale/sale.component';
 import { BuyerLenaComponent} from './view/buyer-lena/buyer-lena.component';
-import { MenuIconsExample} from './view/buyer-lena/buyer-lena-menumaterial.component';
+import { MenuIconsExample} from './view/buyer-lena/material/buyer-lena-menumaterial.component';
+import { BuyerLenaMenu} from './view/buyer-lena/menu/buyer-lena.component';
+import { BuyerLenaNavmenu} from './view/buyer-lena/navmenu/navmenu.component';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/shopping', pathMatch: 'full' },
@@ -15,7 +19,9 @@ const routes: Routes = [
   { path: 'manager',     component: ManagerComponent },
   { path: 'sale',     component: SaleComponent },
   { path: 'buyer-lena', component: BuyerLenaComponent },
-  { path: 'buyer-lena/material', component: MenuIconsExample }
+  { path: 'buyer-lena/material', component: MenuIconsExample },
+  { path: 'buyer-lena/menu', component: BuyerLenaMenu },
+  { path: 'buyer-lena/navmenu', component: BuyerLenaNavmenu }
 ];
 
 @NgModule({
