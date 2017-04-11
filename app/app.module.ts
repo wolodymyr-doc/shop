@@ -26,6 +26,7 @@ import {ProjectComponent} from './view/project/project.component';
 import {ManagerComponent} from './view/manager/manager.component';
 import {AdminComponent} from './view/admin/admin.component';
 import {BuyerComponent} from './view/buyer/buyer.component';
+import {BuyerLenaComponent} from './view/buyer-lena/buyer-lena.component';
 import {SaleComponent} from './view/sale/sale.component';
 import {ProjectItemDragOverDirective} from './view/project/project-item/project-item-drag-over.directive';
 import {AddGoodsComponent, AddGoodsDialogComponent} from './view/add-goods/add-goods.component';
@@ -33,6 +34,7 @@ import {SearchBcComponent} from './view/search-bc/search-bc.component';
 import {HeaderComponent} from './view/header/header.component';
 import {HeaderService} from './service/header.service';
 import {UserService} from './service/user.service';
+import {MenuIconsExample} from './view/buyer-lena/buyer-lena-menumaterial.component';
 import 'hammerjs';
 
 
@@ -58,7 +60,9 @@ import 'hammerjs';
         ManagerComponent,
         BuyerComponent,
         AdminComponent,
-        SaleComponent
+        SaleComponent,
+        BuyerLenaComponent,
+        MenuIconsExample
     ],
     imports: [
         BrowserModule,
