@@ -1,0 +1,6 @@
+.admin-main-category {
+   
+
+}
+.admin-main-container > div:nth-child(even) {background: #CCC}
+.admin-main-container > div::nth-child(odd) {background: #FFF}
