@@ -1,0 +1,20 @@
+ul {
+  background-color: blue;
+  color: white;
+  width:130px;
+}
+
+li {
+border: 2px solid black;
+padding: 5px;
+list-style: none;
+}
+
+li:hover {
+  background-color: DARKSLATEBLUE;
+}
+
+.navmenu {
+  margin: 20px;
+
+}
