@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {MaterialModule, MdListModule, MdMenuItem} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
+
 
 import {AppRouterModule} from './app-router.module';
 import {AppComponent} from './view/main/app.component';
@@ -36,6 +37,10 @@ import {UserService} from './service/user.service';
 
 import 'hammerjs';
 
+// lena's
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NavButtonComponent} from './view/buyer/navbutton/navbutton.component';
 
 @NgModule({
     declarations: [
@@ -59,7 +64,11 @@ import 'hammerjs';
         ManagerComponent,
         BuyerComponent,
         AdminComponent,
-        SaleComponent
+        SaleComponent,
+
+        //lena's
+        NavButtonComponent
+
 
     ],
     imports: [
@@ -70,7 +79,11 @@ import 'hammerjs';
         FlexLayoutModule,
         MdListModule,
         HelpersModule,
-        AppRouterModule
+        AppRouterModule,
+
+        //lena's
+        ReactiveFormsModule,
+        BrowserAnimationsModule
     ],
     bootstrap: [
         AppComponent
@@ -89,3 +102,6 @@ import 'hammerjs';
 })
 export class AppModule {
 }
+
+//lena's
+platformBrowserDynamic().bootstrapModule(AppModule);
