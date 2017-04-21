@@ -17,11 +17,7 @@ const routes: Routes = [
   { path: 'admin',  component: AdminComponent },
   { path: 'shopping', component: BuyerComponent },
   { path: 'manager',     component: ManagerComponent },
-  { path: 'sale',     component: SaleComponent },
-  { path: 'buyer-lena', component: BuyerLenaComponent },
-  { path: 'buyer-lena/material', component: MenuIconsExample },
-  { path: 'buyer-lena/menu', component: BuyerLenaMenu },
-  { path: 'buyer-lena/navmenu', component: BuyerLenaNavmenu }
+  { path: 'sale',     component: SaleComponent }
 ];
 
 @NgModule({

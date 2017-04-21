@@ -6,7 +6,10 @@ import {MaterialModule, MdListModule, MdMenuItem} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
+//own modules
 import {AppRouterModule} from './app-router.module';
+import {AdminModule} from './view/admin/admin.module';
+
 import {AppComponent} from './view/main/app.component';
 import {CategoriesService} from './service/categories.service';
 import {GoodsComponent} from './view/goods/goods.component';
@@ -24,7 +27,6 @@ import {EditItemComponent, EditProjectDialogComponent} from './view/project/proj
 import {ProjectService} from './service/project.service';
 import {ProjectComponent} from './view/project/project.component';
 import {ManagerComponent} from './view/manager/manager.component';
-import {AdminComponent} from './view/admin/admin.component';
 import {BuyerComponent} from './view/buyer/buyer.component';
 import {BuyerLenaComponent} from './view/buyer-lena/buyer-lena.component';
 import {MenuIconsExample} from './view/buyer-lena/material/buyer-lena-menumaterial.component';
@@ -64,7 +66,6 @@ import 'hammerjs';
         HeaderComponent,
         ManagerComponent,
         BuyerComponent,
-        AdminComponent,
         SaleComponent,
         BuyerLenaComponent,
         BuyerLenaMenu,
@@ -79,7 +80,9 @@ import 'hammerjs';
         FlexLayoutModule,
         MdListModule,
         HelpersModule,
-        AppRouterModule
+//own modules
+        AppRouterModule,
+        AdminModule
     ],
     bootstrap: [
         AppComponent

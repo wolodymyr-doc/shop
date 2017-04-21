@@ -3,7 +3,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
-    selector: 'app-admin',
+    selector: 'admin-main',
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.css']
 })
