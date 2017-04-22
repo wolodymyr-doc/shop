@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {MaterialModule, MdListModule} from '@angular/material';
+import {CommonModule} from '@angular/common';
 
-import {AdminComponent} from './admin.component';
+import {ManagerComponent} from './manager.component';
 
 @NgModule({
     declarations: [
-        AdminComponent
+        ManagerComponent
     ],
     imports: [
         CommonModule, MaterialModule, MdListModule
@@ -14,8 +14,8 @@ import {AdminComponent} from './admin.component';
     entryComponents: [
     ],
     exports: [
-        AdminComponent
+        ManagerComponent
     ]
 })
-export class AdminModule {
+export class ManagerModule {
 }

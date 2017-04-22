@@ -3,7 +3,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
-    selector: 'app-manager',
+    selector: 'manager-main',
     templateUrl: './manager.component.html',
     styleUrls: ['./manager.component.css']
 })
