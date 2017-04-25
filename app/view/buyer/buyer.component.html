@@ -6,19 +6,87 @@
         </head>
         <body>
             <!-- Header-->
-            <div class="header">
+            <div id="header">
+              <h1 id="logo"><a href="#">Hi-Tech</a></h1>
+
+
+
+                  		<!-- Navigation -->
+                  		<div id="navigation">
+                  			<ul>
+                  			    <li><a href="#" class="active">Home</a></li>
+                  			    <li><a href="#">Support</a></li>
+                  			    <li><a href="#">My Account</a></li>
+                  			    <li><a href="#">The Store</a></li>
+                  			    <li><a href="#">Your Cart</a></li>
+                  			</ul>
+                  		</div>
             </div>
             <!-- Header end-->
-            <div class="middle" style = "center">
+
+            <!--Middle-->
+            <div id="middle" style = "center">
+
             <!-- Left-sidebar-->
             <div class="left-sidebar">
+              <div class="box search">
+				<h2>Search by <span></span></h2>
+				<div class="box-content">
+					<form action="" method="post">
+
+						<label>Keyword</label>
+						<input type="text" class="field" />
+
+						<label>Category</label>
+						<select class="field">
+							<option value="">-- Select Category --</option>
+						</select>
+
+						<div class="inline-field">
+							<label>Price</label>
+							<select class="field small-field">
+								<option value="">$10</option>
+							</select>
+							<label>to:</label>
+							<select class="field small-field">
+								<option value="">$50</option>
+							</select>
+						</div>
+
+						<input type="submit" class="search-submit" value="Search" />
+
+						<p>
+							<a href="#" class="bul">Advanced search</a><br />
+							<a href="#" class="bul">Contact Customer Support</a>
+						</p>
+
+					</form>
+          <div class="box categories">
+				<h2>Categories <span></span></h2>
+				<div class="box-content">
+					<ul>
+					    <li><a href="#">Category 1</a></li>
+					    <li><a href="#">Category 2</a></li>
+					    <li><a href="#">Category 3</a></li>
+					    <li><a href="#">Category 4</a></li>
+					    <li><a href="#">Category 5</a></li>
+
+					</ul>
+				</div>
+			</div>
+				</div>
+			</div>
+
             </div>
           <!-- Left-sidebar end-->
           <!-- Content-sidebar-->
-          <div class="content">
+          <div class="catalog">
+            <buyer-catalog-component></buyer-catalog-component>
           </div>
           </div>
           <!-- Content-sidebar end-->
+          <!--Middle end-->
+
           <!-- Footer -->
           <div class="footer">
           </div>
