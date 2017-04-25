@@ -22,8 +22,6 @@ export class AdminComponent {
     }
    ] ;
 
-
-
     constructor() {
     }
 
