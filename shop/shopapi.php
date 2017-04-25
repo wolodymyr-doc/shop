@@ -26,6 +26,9 @@ class ShopApi {
        function process($con,$method,$params,$data) {
            $res = '';
            $this->con = $con;
+           $this->method = $method;
+           $this->params = $params;
+           $this->pool = $data;
            switch($method) {
                case 'GET':
                   $res = $this->_get($params);
@@ -78,6 +81,7 @@ class ShopApi {
             return $res;
        }
        function postProcess(&$res) {
+            if (empty($this->idField)) $this->idField='id';  
             if ($res['sql_read']) {
                 $data = $res['sql_read'];
                 if (!is_array($data)) {
@@ -90,7 +94,42 @@ class ShopApi {
                 }
             }
             if ($res['sql_create']) {
+                 $data = $res['sql_create'];
+                 if (isAssociativeArray($this->pool)) {
+                     $res['data'] = $this->processSingleCreate($data,$this->pool);
+                 } else {
+                     $n = count($data);
+                     $res['data'] = array();
+                     for($i=0;$i<$n;$i++) {
+                       $res['data'][$i] = $this->processSingleCreate($data,$this->pool[$i]);
+                     }
+                 }         
             }
+       }
+       function processSingleCreate($sql,$data) {
+            if (!is_array($this->fields)) throw new Exception("505");
+            $val = '';$n = count($this->fields);
+            $sql.='('; $cnt = 0;
+            for($i=0;$i<$n;$i++) {
+               $key = $this->fields[$i];
+               if (isset($data[$key])) {
+		     if (($cnt++)!=0) {
+                         $sql.=',';
+                         $val.=',';
+                     }
+                     $sql.=$key;
+                     $val.='"'.addslashes($data[$key].'').'"';
+               }
+            }
+            if ($cnt==0) throw new Exception("506");
+            $sql.=') VALUES('+$val+')';
+            $res = $this->executeSql($sql,'id');
+            $data[$this->idField]=$res['id'];
+            return $data;
+       }
+       function isAssociativeArray(array $arr) {
+            if (array() === $arr) return false;
+            return array_keys($arr) !== range(0, count($arr) - 1);
        }
 }
 header('Content-Type: application/json; charset=utf-8');
