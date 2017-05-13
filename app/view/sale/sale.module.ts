@@ -1,28 +1,32 @@
 import {NgModule} from '@angular/core';
 import {MaterialModule, MdListModule} from '@angular/material';
 import {CommonModule} from '@angular/common';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {SaleComponent} from './sale.component';
-import {SaleButtonComponent} from './button.component';
-import {SaleMenuComponent} from './menu.component';
+import {SaleButtonComponent} from './button/button.component';
+import {SaleMenuComponent} from './menu0/menu.component';
+import {SaleMenuComponent1} from './menu1/menu.component1';
 
 @NgModule({
     declarations: [
         SaleComponent,
         SaleButtonComponent,
-        SaleMenuComponent
+        SaleMenuComponent,
+        SaleMenuComponent1
     ],
     imports: [
-        CommonModule, MaterialModule, MdListModule
+        CommonModule, MaterialModule, MdListModule, BrowserModule, FormsModule, ReactiveFormsModule,
     ],
     entryComponents: [
     ],
     exports: [
         SaleComponent,
         SaleButtonComponent,
-        SaleMenuComponent
+        SaleMenuComponent,
+        SaleMenuComponent1,
     ]
 })
 export class SaleModule {
 }
-                                            
