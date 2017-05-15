@@ -4,7 +4,7 @@ import {MaterialModule, MdListModule} from '@angular/material';
 
 import {BuyerComponent} from './buyer.component';
 import {BuyerMainComponent} from './main/buyermain.component';
-import {BuyerCategoryComponent} from './details/buyerdetails.component';
+import {BuyerCategoryComponent} from './category/buyercategory.component';
 import {BuyerCatalogComponent} from './catalog/buyer.catalog.component';
 
 @NgModule({
