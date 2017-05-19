@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-import { User } from '../../model/user';
-import { Project } from '../../model/project';
-import { UserService} from '../../service/user.service';
-
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -12,7 +8,7 @@ import { UserService} from '../../service/user.service';
 export class AppComponent {
     
 
-    constructor(private userService:UserService) {
+    constructor() {
 /************************
         this.userService.authenticate()
             .then((user) => {

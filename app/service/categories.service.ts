@@ -10,6 +10,7 @@ export class CategoriesService {
     private adminUrl: string = UrlRegistry.rootBackendUrl() + '/admin/categories';
 
     constructor(private http: Http) {
+         
     }
 
     getCategories(): Observable<Categories[]> {
