@@ -1,0 +1,9 @@
+<md-input-container>
+  <input mdInput placeholder="to:" [mdAutocomplete]="auto" [formControl]="lpriceCtrl">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let lprice of filteredLprices | async" [value]="lprice">
+    {{ lprice }}
+  </md-option>
+</md-autocomplete>

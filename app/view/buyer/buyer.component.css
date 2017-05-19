@@ -35,46 +35,12 @@ align-self: center;
 padding:10px 0 0 0;
 }
 
-.left-sidebar{
+#left-sidebar{
   width: 300px;
   height: 600px;
   border: 1px solid blue;
   float: left;
 	/* Search-Box left-sidebar*/
-	input, textarea, select { font-family: "Trebuchet MS", Arial, sans-serif; font-size:12px; }
-
-	.box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
-	.box h2{ background:#7f7f7f; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
-	.box-content { padding:5px;}
-	.box h2 span{ position:absolute; width:10px; height:5px; background:url(images/arrow.gif); top:27px; right:10px; font-size:0; line-height:0;}
-	.search { min-height:252px;}
-	.search label { display:block; padding-bottom:3px; }
-	.search .field { display:block; margin-bottom:10px; }
-	.search .inline-field label { display:inline; padding:0; }
-	.search .inline-field .field { display:inline; margin:0; }
-	.search input.field { width:206px; }
-	.search select.field { width:212px; }
-	.search select.small-field { width:50px; }
-	.search-submit { width:70px; background:#8b0000; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
-	.categories { min-height:383px; }
-	.categories ul { list-style-type: none; font-size:13px;}
-	.categories ul li{ border-bottom:dashed 1px #ccc; padding:5px 0;}
-	.categories ul li a:hover{ color:#8b0000; }
-
-	/* Search-Box left-sidebar end*/
-	/* Categories left-sidebar */
-
-	.categories { min-height:383px; }
-	.categories ul { list-style-type: none; font-size:13px;}
-	.categories ul li{ border-bottom:dashed 1px #ccc; padding:5px 0;}
-
-	.categories ul li a{ color:#5f5f5f; text-decoration: none; padding-left:17px;}
-	.categories ul li a:hover{ color:#8b0000; }
-
-	.box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
-	.box h2{ background:#7f7f7f; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
-	.box h2 span{ position:absolute; width:10px; height:5px; top:27px; right:10px; font-size:0; line-height:0;}
-	/* Categories left-sidebar */
 }
 
 
