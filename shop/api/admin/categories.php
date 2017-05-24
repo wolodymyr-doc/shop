@@ -1,6 +1,11 @@
 <?php
 class Categories extends ShopApi {
 
+   public function __construct()
+   {
+      $this->fields=array('id','level','parent','image',
+            'name1','name2','name3','name4','name5');
+   }
    function _get($params) {
        return array('sql_read'=>'select * from shop_categories');
    }

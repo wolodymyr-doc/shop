@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <meta charset="utf-8"/>
-                <title>Hi-tech</title>
-        </head>
-        <body>
-            <!-- Header-->
-            <div id="header">
-              <h1 id="logo"><a href="#">Hi-Tech</a></h1>
+<head>
+
+	<title>Hi-Tech Shop</title>
 
 
+	<script></script>
 
-                  		<!-- Navigation -->
-                  		<div id="navigation">
-                  			<ul>
-                  			    <li><a href="#" class="active">Home</a></li>
-                  			    <li><a href="#">Support</a></li>
-                  			    <li><a href="#">My Account</a></li>
-                  			    <li><a href="#">The Store</a></li>
-                  			    <li><a href="#">Your Cart</a></li>
-                  			</ul>
-                  		</div>
-            </div>
-            <!-- Header end-->
 
-            <!--Middle-->
-            <div id="middle" style = "center">
+</head>
+<body>
 
-            <!-- Left-sidebar-->
-            <div class="left-sidebar">
-              <div class="box search">
+
+<div class="shell">
+
+
+	<div id="header">
+		<h1 id="logo"><a href="#">Hi-Tech</a></h1>
+
+		<!-- Cart -->
+		<div id="cart">
+			<a href="#" class="cart-link">Your Cart</a>
+			<div class="cl">&nbsp;</div>
+			<span>Articles: <strong>5</strong></span>
+			&nbsp;&nbsp;
+			<span>Cost: <strong>$470.44</strong></span>
+		</div>
+
+
+		<!-- Navigation -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="#" class="active">Home</a></li>
+			    <li><a href="#">Support</a></li>
+			    <li><a href="#">My Account</a></li>
+			    <li><a href="#">The Store</a></li>
+			    <li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+
+	<!-- Main -->
+	<div id="main">
+		<div class="cl">&nbsp;</div>
+
+		<!-- Content -->
+		<div id="content">
+
+			<!-- Content Slider -->
+			<div id="slider" class="box">
+				<div id="slider-holder">
+					<ul>
+					    <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+					</ul>
+				</div>
+				<div id="slider-nav">
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+				</div>
+			</div>
+			<!--   Slider end-->
+
+			<!-- Products -->
+			<div class="products">
+				<div class="cl">&nbsp;</div>
+
+				    	<buyer-catalog-component></buyer-catalog-component>
+
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!--  Products end-->
+
+		</div>
+		<!--  Content end -->
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+
+			<!-- Search box-->
+			<div class="box search">
 				<h2>Search by <span></span></h2>
 				<div class="box-content">
 					<form action="" method="post">
@@ -61,35 +117,109 @@
 						</p>
 
 					</form>
-          <div class="box categories">
+				</div>
+			</div>
+			<!--  Search box end -->
+
+			<!-- Categories -->
+			<div class="box categories">
 				<h2>Categories <span></span></h2>
 				<div class="box-content">
-					<ul>
-					    <li><a href="#">Category 1</a></li>
-					    <li><a href="#">Category 2</a></li>
-					    <li><a href="#">Category 3</a></li>
-					    <li><a href="#">Category 4</a></li>
-					    <li><a href="#">Category 5</a></li>
-
-					</ul>
+					<buyer-category></buyer-category>
 				</div>
 			</div>
+			<!-- Categories end -->
+			<div class="box categories">
+				<h2>Registration<span></span></h2>
+				<div class="box-content">
+					<buyer-reg></buyer-reg>
 				</div>
 			</div>
 
-            </div>
-          <!-- Left-sidebar end-->
-          <!-- Content-sidebar-->
-          <div class="catalog">
-            <buyer-catalog-component></buyer-catalog-component>
-          </div>
-          </div>
-          <!-- Content-sidebar end-->
-          <!--Middle end-->
+		</div>
+		<!-- Sidebar end-->
 
-          <!-- Footer -->
-          <div class="footer">
-          </div>
-          <!-- Footer end-->
-        </body>
+		<div class="cl">&nbsp;</div>
+	</div>
+	<!-- End Main -->
+
+	<!-- Side Full -->
+	<div class="side-full">
+
+		<!-- More Products -->
+		<div class="more-products">
+			<div class="more-products-holder">
+				<ul>
+				    <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+
+				</ul>
+			</div>
+			<div class="more-nav">
+				<a href="#" class="prev">previous</a>
+				<a href="#" class="next">next</a>
+			</div>
+		</div>
+		<!-- End More Products -->
+
+		<!-- Text Cols -->
+		<div class="cols">
+			<div class="cl">&nbsp;</div>
+			<div class="col">
+				<h3 class="ico ico1">Delivery</h3>
+				<p>Delivery of goods...</p>
+				<p class="more"><a href="#" class="bul">More</a></p>
+			</div>
+			<div class="col">
+				<h3 class="ico ico2">Contact</h3>
+				<p>Contact us.</p>
+				<p class="more"><a href="#" class="bul">Phone numbers</a></p>
+			</div>
+			<div class="col">
+				<h3 class="ico ico3">Special offers</h3>
+				<p>Terms of action...</p>
+				<p class="more"><a href="#" class="bul">More</a></p>
+			</div>
+			<div class="col col-last">
+				<h3 class="ico ico4">Your cart</h3>
+				<p>Selected goods...</p>
+				<p class="more"><a href="#" class="bul">View</a></p>
+			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+
+	<!-- Footer -->
+	<div id="footer">
+		<p class="left">
+			<a href="#">Home</a>
+			<span>|</span>
+			<a href="#">Support</a>
+			<span>|</span>
+			<a href="#">My Account</a>
+			<span>|</span>
+			<a href="#">The Store</a>
+			<span>|</span>
+			<a href="#">Contact</a>
+		</p>
+		<p class="right">
+			&copy; 2017 Hi-Tech Shop.
+			Design by BrainBasket
+		</p>
+	</div>
+	<!-- Footer end -->
+
+</div>
+<!--  Shell end -->
+
+
+</body>
 </html>

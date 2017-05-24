@@ -1,16 +1,17 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-
+import {Component} from '@angular/core';
 
 
 @Component({
-    selector: 'buyer-category',
-    templateUrl: './buyercategory.component.html',
-    styleUrls: ['./buyercategory.component.css']
+  selector: 'buyer-category',
+  templateUrl: './buyercategory.component.html',
 })
-
 export class BuyerCategoryComponent {
-
-    constructor() {
-    }
-
+categories = ['Books',
+            'Software',
+            'Electronics', 
+            'Home',
+            'Garden',
+            'Sport',
+            'Art',
+            'Auto',];
 }
