@@ -1,0 +1,10 @@
+.example-card {
+  width: 153px;
+  margin-left: 10px;
+  left:0;
+}
+
+.example-header-image {
+
+  background-size: contain;
+}

@@ -87,3 +87,12 @@
    font-weight: normal;
    font-size: 13px;
 }
+
+.catalog
+{
+  margin-top: 250px;
+  width: 700px;
+  height: auto;
+  border: 1px solid blue;
+  margin-left: 200px;
+}

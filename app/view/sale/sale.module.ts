@@ -10,6 +10,7 @@ import {SaleMenuComponent} from './menu0/menu.component';
 import {SaleMenuComponent1} from './menu1/menu.component1';
 import {SearchComponent1} from './search/Searchcomponent1';
 import {HttpModule} from '@angular/http';
+import {BuyerCatalogComponent} from './catalog/buyer.catalog.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import {HttpModule} from '@angular/http';
         SaleMenuComponent,
         SaleMenuComponent1,
 		SearchComponent1,
+		BuyerCatalogComponent,
     ],
     imports: [
         CommonModule, MaterialModule, MdListModule, BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
@@ -30,6 +32,7 @@ import {HttpModule} from '@angular/http';
         SaleMenuComponent,
         SaleMenuComponent1,
 		SearchComponent1,
+		BuyerCatalogComponent,
     ]
 })
 export class SaleModule {
