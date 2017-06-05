@@ -9,7 +9,6 @@ export class SaleMenuComponent1 {
   foods = [
     {value: 'goods-0', viewValue: 'Sport'},
     {value: 'goods-1', viewValue: 'Clothes'},
-<<<<<<< HEAD
     {value: 'goods-2', viewValue: 'Mobile Phones'},
     {value: 'goods-3', viewValue: 'Bicycle'},
     {value: 'goods-4', viewValue: 'Building'},
@@ -17,9 +16,7 @@ export class SaleMenuComponent1 {
     {value: 'goods-6', viewValue: 'Acessories'},
     {value: 'goods-7', viewValue: 'Clothes'},
     {value: 'goods-8', viewValue: 'Battery'},
-=======
-    {value: 'goods-2', viewValue: 'Mobile Phones'}
->>>>>>> 72a3efd8a5d3168b2c465b7844908949f789ca70
+
   ];
 }
 
