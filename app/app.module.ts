@@ -32,6 +32,7 @@ import 'hammerjs';
         FlexLayoutModule,
         MdListModule,
         HelpersModule,
+        
 //own modules
         AppRouterModule,
         AdminModule,
