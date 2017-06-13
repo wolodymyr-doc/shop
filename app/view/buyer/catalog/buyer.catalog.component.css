@@ -1,5 +1,5 @@
 .example-card {
-  
+
   width: 160px;
   max-width: 350px;
   margin: 15px;
@@ -24,4 +24,8 @@ p {
 
 li {
   display: inline;
+}
+img{
+  width: 50px;
+  height: 100px;
 }

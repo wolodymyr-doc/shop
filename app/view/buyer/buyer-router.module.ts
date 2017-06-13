@@ -6,11 +6,12 @@ import { BuyerComponent } from './view/buyer/buyer.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/shopping', pathMatch: 'full' },
   { path: 'shopping', component: BuyerComponent },
+  { path: 'shopping/catalog/details', component: BuyerDetailsComponent }
+  ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forChild(routes) ],
   exports: [ RouterModule ]
 })
 export class BuyerRouterModule {}

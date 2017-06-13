@@ -6,3 +6,7 @@
   width: inherit;
   margin-top: 25px;
 }
+button{
+  margin-top: 20px;
+  background-color: lightGrey;
+}
