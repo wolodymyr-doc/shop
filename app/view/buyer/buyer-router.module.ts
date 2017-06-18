@@ -6,8 +6,8 @@ import { BuyerComponent } from './view/buyer/buyer.component';
 
 
 const routes: Routes = [
-  { path: 'shopping', component: BuyerComponent },
-  { path: 'shopping/catalog/details', component: BuyerDetailsComponent }
+  { path: 'shopping', component: BuyerComponent }
+
   ];
 
 @NgModule({
