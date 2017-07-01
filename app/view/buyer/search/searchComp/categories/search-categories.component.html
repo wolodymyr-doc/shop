@@ -1,0 +1,9 @@
+<md-input-container>
+  <input mdInput placeholder="Categories" [mdAutocomplete]="auto" [formControl]="categoryCtrl">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let category of filteredCategories | async" [value]="category">
+    {{ category }}
+  </md-option>
+</md-autocomplete>
