@@ -9,7 +9,11 @@ import {Component} from '@angular/core';
 })
 
 export class AdvSearchComponent {
-
+    colors = [
+        {value: 'blue-0', viewValue: 'Blue'},
+        {value: 'red-1', viewValue: 'Red'},
+        {value: 'blacck-2', viewValue: 'Black'}
+    ];
     constructor() {
     }
 

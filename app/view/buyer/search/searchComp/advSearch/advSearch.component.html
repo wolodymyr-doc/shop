@@ -1,1 +1,15 @@
-Advanced Search
+
+<table>
+    <tr><p><md-checkbox>with GPS</md-checkbox></p></tr>
+    <tr><p><md-select placeholder="Select color">
+            <md-option *ngFor="let color of colors" [value]="color.value">
+                {{ color.viewValue }}
+            </md-option>
+        </md-select></p></tr>
+    <div class="zagolovki"><b>Select the color of the gift:</b></div>
+    <tr><p> <md-radio-button value="1">Add a blue case</md-radio-button></p></tr>
+    <tr><p> <md-radio-button value="1">Add a green case</md-radio-button></p></tr>
+    <tr><p> <md-checkbox>With NFC</md-checkbox></p></tr>
+
+
+</table>
