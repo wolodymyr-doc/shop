@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BuyerComponent } from './buyer.component';
 import { AdvSearchComponent } from './search/searchComp/advSearch/advSearch.component';
-import { CustomerSupportComponent } from './search/searchComp/CustSupportSearch/customer-support.component'
+import { CustomerSupportComponent } from './search/searchComp/CustSupportSearch/customer-support.component';
 
 
 const routes: Routes = [
