@@ -6,7 +6,7 @@ import { BuyerComponent } from './buyer.component';
 import { BuyerDetailsComponent } from './catalog/details/buyer-details.component';
 import { BuyerCatalogComponent } from './catalog/buyer.catalog.component';
 import { AdvSearchComponent } from './search/searchComp/advSearch/advSearch.component';
-import { CustomerSupportComponent } from './search/searchComp/CustSupportSearch/customer-support.component'
+import { CustomerSupportComponent } from './search/searchComp/CustSupportSearch/customer-support.component';
 
 
 const routes: Routes = [
