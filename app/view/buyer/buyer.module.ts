@@ -8,6 +8,8 @@ import {BuyerMainComponent} from './main/buyermain.component';
 import {BuyerCategoryComponent} from './category/buyercategory.component';
 import {BuyerCatalogComponent} from './catalog/buyer.catalog.component';
 import {BuyerRegComponent} from './registration/buyerreg.component';
+import {BuyerDetailsComponent} from './catalog/details/buyer-details.component';
+
 import {SearchComponent} from './search/search.component';
 import {SearchCategoriesComponent} from './search/searchComp/categories/search-categories.component';
 import {SearchInputComponent} from './search/searchComp/input/search-input.component';
@@ -18,7 +20,7 @@ import {AdvSearchComponent} from './search/searchComp/advSearch/advSearch.compon
 import {CustomerSupportComponent} from './search/searchComp/CustSupportSearch/customer-support.component';
 
 import {BuyerRouterModule} from './buyer-router.module'
-import {RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -27,6 +29,8 @@ import {RouterModule} from '@angular/router';
         BuyerCategoryComponent,
         BuyerMainComponent,
         BuyerRegComponent,
+        BuyerDetailsComponent,
+
         SearchComponent,
         SearchCategoriesComponent,
         SearchInputComponent,
@@ -48,6 +52,9 @@ import {RouterModule} from '@angular/router';
         BuyerCategoryComponent,
         BuyerMainComponent,
         BuyerRegComponent,
+        BuyerDetailsComponent,
+
+
         SearchComponent,
         SearchCategoriesComponent,
         SearchInputComponent,
