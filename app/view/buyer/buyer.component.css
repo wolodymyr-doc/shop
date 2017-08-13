@@ -24,14 +24,14 @@ h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(imag
 
 #header { height:64px;  position:relative;}
 
-#navigation { float:right; white-space:nowrap; }
+/*#navigation { float:right; white-space:nowrap; }
 #navigation ul{ list-style-type: none; height:64px; font-weight: bold; float:left;}
 #navigation ul li{ float:left; display:inline; }
 #navigation ul li a{ float:left; height:64px; line-height:64px; text-decoration: none; color:#fff; padding:0 15px;}
 #navigation ul li a.active,
-#navigation ul li a:hover{ background:#fff; color:#8b0000; }
+#navigation ul li a:hover{ background:#fff; color:#8b0000; }*/
 
-#cart { float:right; width:160px; top:0; right:0; height:51px; background:#8FBC8F; color:#fff; padding:13px 10px 0 10px; white-space:nowrap; line-height:20px;}
+#cart { float:right; width:160px; top:0; right:0; height:51px;  color:#fff; padding:13px 10px 0 10px; white-space:nowrap; line-height:20px;}
 a.cart-link { color:#fff; padding:0 0 0 32px; text-decoration: none;}
 a.cart-link:hover { text-decoration: underline;}
 

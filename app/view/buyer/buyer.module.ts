@@ -19,7 +19,7 @@ import {SearchButtonComponent} from './search/searchComp/button/search-button.co
 import {AdvSearchComponent} from './search/searchComp/advSearch/advSearch.component';
 import {CustomerSupportComponent} from './search/searchComp/CustSupportSearch/customer-support.component';
 
-import {BuyerRouterModule} from './buyer-router.module'
+import {BuyerRouterModule} from './buyer-router.module';
 import { Routes, RouterModule } from '@angular/router';
 
 @NgModule({
