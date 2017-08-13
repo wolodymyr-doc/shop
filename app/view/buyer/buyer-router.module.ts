@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -16,8 +16,8 @@ const routes: Routes = [
     children:
                 [
                     {path: 'advanced-search', component: AdvSearchComponent},
-                    { path: 'catalog', component: BuyerCatalogComponent
-                    children:[
+                    { path: 'catalog', component: BuyerCatalogComponent,
+                    children: [
                     { path: 'details', component: BuyerDetailsComponent }
                     ]
 
