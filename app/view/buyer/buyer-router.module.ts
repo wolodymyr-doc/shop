@@ -2,27 +2,27 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { BuyerComponent } from './buyer.component';
-import { BuyerDetailsComponent } from './catalog/details/buyer-details.component';
-import { BuyerCatalogComponent } from './catalog/buyer.catalog.component';
-import { AdvSearchComponent } from './search/searchComp/advSearch/advSearch.component';
-import { CustomerSupportComponent } from './search/searchComp/CustSupportSearch/customer-support.component';
+import { BuyerComponent } from './main/buyer.component';
+import { BuyerDetailsComponent } from './content-main/details/buyer-details.component';
+import { BuyerCatalogComponent } from './content-main/catalog/buyer.catalog.component';
+//import { AdvSearchComponent } from './navbar/search/searchComp/advSearch/advSearch.component';
+import { CustomerSupportComponent } from './navbar/search/CustSupportSearch/customer-support.component';
 
 
-const routes: Routes = [
+const searchRoutes: Routes = [
 
     { path: 'customer-support', component: CustomerSupportComponent },
     { path: 'shopping',
     children:
                 [
-                    {path: 'advanced-search', component: AdvSearchComponent},
-                    { path: 'catalog', component: BuyerCatalogComponent,
-                    children: [
-                    { path: 'details', component: BuyerDetailsComponent }
-                    ]
+                    // { path: 'advanced-search', component: AdvSearchComponent},
+                    { path: 'catalog',
+                        children:
+                            [
+                                { path: 'details', component: BuyerDetailsComponent }
+                            ],
 
-                    }
-
+                    component: BuyerCatalogComponent },
                 ], component: BuyerComponent },
 
 
@@ -31,7 +31,7 @@ const routes: Routes = [
          ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
+  imports: [ RouterModule.forChild(searchRoutes) ],
   exports: [ RouterModule ]
 })
 export class BuyerRouterModule {}

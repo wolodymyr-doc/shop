@@ -18,7 +18,7 @@ h4 { font-size:12px; line-height:14px; text-transform: uppercase; color:#000; }
 
 
 h1#logo { font-size:0; line-height:0; width:156px; height:64px; float:left; }
-h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(images/tech.png); }
+h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(../images/tech.png); }
 
 /*!*.shell { width:960px; margin:0 auto; padding:10px; background:#fff; }*!*/
 
@@ -45,7 +45,7 @@ a.cart-link:hover { text-decoration: underline;}
 .box h2 span{ position:absolute; width:10px; height:5px; top:27px; right:10px; font-size:0; line-height:0;}
 .box-content { padding:5px;}
 
-a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
+a.bul { background:url(../images/bul.gif) no-repeat 0 center; padding-left:10px;}
 
 /*.search { min-height:252px;}*/
 /*.search label { display:block; padding-bottom:3px; }*/
