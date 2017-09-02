@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'shopping', component: BuyerComponent },
   { path: 'manager',     component: ManagerComponent },
   { path: 'sale',     component: SaleComponent },
-  { path: '', redirectTo: '/shopping', pathMatch: 'full' }
+  { path: '', redirectTo: '/shopping/catalog', pathMatch: 'full' }
 ];
 
 @NgModule({

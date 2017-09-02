@@ -16,13 +16,9 @@ const searchRoutes: Routes = [
     children:
                 [
                     // { path: 'advanced-search', component: AdvSearchComponent},
-                    { path: 'catalog',
-                        children:
-                            [
-                                { path: 'details', component: BuyerDetailsComponent }
-                            ],
-
-                    component: BuyerCatalogComponent },
+                    { path: '', redirectTo: 'catalog', pathMatch: 'full' },
+                    { path: 'catalog', component: BuyerCatalogComponent },
+                    { path: 'details', component: BuyerDetailsComponent }
                 ], component: BuyerComponent },
 
 
