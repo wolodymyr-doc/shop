@@ -13,18 +13,19 @@ const searchRoutes: Routes = [
 
     { path: 'customer-support', component: CustomerSupportComponent },
     { path: 'shopping',
-    children:
-                [
-                    // { path: 'advanced-search', component: AdvSearchComponent},
-                    { path: '', redirectTo: 'catalog', pathMatch: 'full' },
-                    { path: 'catalog', component: BuyerCatalogComponent },
-                    { path: 'details', component: BuyerDetailsComponent }
-                ], component: BuyerComponent },
+          children: [
+                     // { path: 'advanced-search', component: AdvSearchComponent},
+                     { path: '', redirectTo: 'catalog', pathMatch: 'full' },
+              {
+                  path: 'catalog',
+                  children: [
+                      {path: '', component: BuyerCatalogComponent},
+                      {path: 'details', component: BuyerDetailsComponent}
+                  ]
+              }
+          ], component: BuyerComponent},
 
-
-
-
-         ];
+];
 
 @NgModule({
   imports: [ RouterModule.forChild(searchRoutes) ],
