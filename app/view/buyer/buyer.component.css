@@ -1,10 +1,10 @@
 * { padding:0; margin:0; outline:0; }
 body {
 
-	font-family: "Trebuchet MS", Arial, sans-serif;
-	font-size:12px;
-	line-height:16px;
-	color:#636363;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size:12px;
+    line-height:16px;
+    color:#636363;
 }
 input, textarea, select { font-family: "Trebuchet MS", Arial, sans-serif; font-size:12px; }
 
@@ -41,15 +41,12 @@ h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(imag
 a.cart-link { color:#fff; padding:0 0 0 32px; text-decoration: none;}
 a.cart-link:hover { text-decoration: underline;}
 
-#sidebar { float:left; width:226px;}
-#content { float:right; width:724px;}
+
+#content { width: auto;}
 
 #main { padding:10px 0 0 0; }
 
-.box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
-.box h2{ background: #8FBC8F; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
-.box h2 span{ position:absolute; width:10px; height:5px; top:27px; right:10px; font-size:0; line-height:0;}
-.box-content { padding:5px;}
+
 
 a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 
@@ -64,10 +61,6 @@ a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 .search select.small-field { width:50px; }
 
 .search-submit { width:70px; background:#8b0000; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
-
-.categories { height:flex; }
-
-
 
 
 .more-products { border:solid 1px #dedede; position:relative; height:114px; overflow:hidden; }
@@ -93,3 +86,9 @@ h3.ico { background-repeat:no-repeat; background-position:0 2px; padding:6px 0 8
 #footer a{ color:#7b7b7b; text-decoration: none;}
 #footer a:hover{ color:#000;}
 #footer span{ padding:0 2px;}
+
+.buyer-container { width: 100%; height: 100%; min-height: 1000px; border: 1px solid rgba(0, 0, 0, 0.5); }
+
+.buyer-sidenav-content { display: flex; height: 100%; align-items: center; justify-content: center; }
+
+.buyer-sidenav { padding: 20px; }

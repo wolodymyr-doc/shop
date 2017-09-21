@@ -9,6 +9,7 @@ import {BuyerCategoryComponent} from './category/buyercategory.component';
 import {BuyerCatalogComponent} from './catalog/buyer.catalog.component';
 import {BuyerRegComponent} from './registration/buyerreg.component';
 import {BuyerDetailsComponent} from './catalog/details/buyer-details.component';
+import {BuyerSidenavComponent} from './sidenav/buyer-sidenav.component';
 
 import {SearchComponent} from './search/search.component';
 import {SearchCategoriesComponent} from './search/searchComp/categories/search-categories.component';
@@ -30,6 +31,7 @@ import { Routes, RouterModule } from '@angular/router';
         BuyerMainComponent,
         BuyerRegComponent,
         BuyerDetailsComponent,
+        BuyerSidenavComponent,
 
         SearchComponent,
         SearchCategoriesComponent,
@@ -53,6 +55,7 @@ import { Routes, RouterModule } from '@angular/router';
         BuyerMainComponent,
         BuyerRegComponent,
         BuyerDetailsComponent,
+        BuyerSidenavComponent,
 
 
         SearchComponent,

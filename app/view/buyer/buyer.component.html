@@ -11,12 +11,19 @@
 </head>
 <body>
 
+<md-sidenav-container class="buyer-container">
+    <md-sidenav #sidenav class="buyer-sidenav">
+        <buyer-sidenav></buyer-sidenav>
+    </md-sidenav>
+
+
 
 <div class="shell">
 
 
 	<div id="header">
 		<h1 id="logo"><a routerLink="catalog" routerLinkActive="active">Hi-Tech</a></h1>
+
 
 		<!-- Cart -->
 		<div id="cart">
@@ -31,8 +38,10 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="#" class="active">Home</a></li>
-			    <li><a href="#">Support</a></li>
+			    <li><a routerLink="catalog" routerLinkActive="active">Home</a></li>
+			    <li><a (click)="sidenav.open()"><div class="buyer-sidenav-content">
+                        Menu
+                </div></a></li>
 			    <li><a href="#">My Account</a></li>
 			    <li><a href="#">The Store</a></li>
 			    <li><a href="#">Contact</a></li>
@@ -46,6 +55,7 @@
 	<div id="main">
 		<div class="cl">&nbsp;</div>
 
+
 		<!-- Content -->
 		<div id="content">
 
@@ -54,8 +64,9 @@
 			<!-- Products -->
 			<div class="products">
 				<div class="cl">&nbsp;</div>
-				<a routerLink="catalog" routerLinkActive="active">Hi-Tech</a>
-				<buyer-catalog-component></buyer-catalog-component>
+
+
+				<router-outlet></router-outlet>
 
 				<div class="cl">&nbsp;</div>
 			</div>
@@ -65,49 +76,12 @@
 		<!--  Content end -->
 
 		<!-- Sidebar -->
-		<div id="sidebar">
-			<!--Action-->
-			<div class="box categories">
-
-				<h2>Actions<span></span></h2>
-				<div class="box-content">
-
-				</div>
-			</div>
-			<!--Action end-->
-
-			<!--Registration-->
-			<div class="box categories">
-
-				<h2>Registration<span></span></h2>
-				<div class="box-content">
-					<buyer-reg></buyer-reg>
-				</div>
-			</div>
-			<!--Registration end-->
-
-			<!-- Categories -->
-			<div class="box categories">
-				<h2>Categories <span></span></h2>
-				<div class="box-content">
-					<buyer-category></buyer-category>
-				</div>
-			</div>
-			<!-- Categories end -->
-
-			<!-- Search box-->
-			<div class="box search">
-				<h2>Search by <span></span></h2>
-				<div class="box-content">
-					<search></search>
-				</div>
-			</div>
-			<!--  Search box end -->
 
 
 
 
-		</div>
+
+
 		<!-- Sidebar end-->
 
 		<div class="cl">&nbsp;</div>
@@ -190,7 +164,7 @@
 
 </div>
 <!--  Shell end -->
-
+</md-sidenav-container>
 
 </body>
 </html>

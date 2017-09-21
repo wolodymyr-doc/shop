@@ -1,0 +1,6 @@
+#sidebar { float:left; width:226px; }
+.box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
+.box h2{ background: #8FBC8F; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
+.box h2 span{ position:absolute; width:10px; height:5px; top:27px; right:10px; font-size:0; line-height:0;}
+.box-content { padding:5px;}
+.categories { height:flex; }
